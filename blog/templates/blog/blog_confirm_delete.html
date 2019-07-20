@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+    <h1>Delete</h1>
+    <p class="text text-danger" >Are you sure you want to delete this item?</p>
+
+    <form method="post">
+    {% csrf_token %}
+
+    {{ form }}
+
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a href="{% url 'index' %}" class="btn btn-default">Cancel</a>
+    <p style="margin-bottom:5em;"></p>
+
+{% endblock %}
